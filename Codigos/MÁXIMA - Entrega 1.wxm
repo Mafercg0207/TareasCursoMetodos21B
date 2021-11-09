@@ -1,0 +1,572 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 21.05.2 ] */
+/* [wxMaxima: title   start ]
+Taller de problemas 1
+   [wxMaxima: title   end   ] */
+
+
+/* [wxMaxima: comment start ]
+María Fernanda Carvajal Guerrero - 2200804
+Carlos Santiago Rodríguez Sarmiento - 2200799
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: section start ]
+Los vectores de siempre
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Problema 3 - Sección 1.1.8
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Definimos un triángulo como una composición de tres vectores
+Triangulo: [a,b,c]
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+Donde cada vector respresenta la posición de los puntos respecto a un origen común de ellos:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+a: [2,3];
+b: [6,9];
+c: [8,1];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Y el cálculo del baricentro se puede realizar definiendo una función para el baricentro tal que:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g(u,v,w) := 1/3*(u+v+w);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Entonces, utilizando la función con los vectores anteriores se tiene que:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g(a,b,c);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Esta, también puede utilizarse para calcular el baricentro en vectores de R³:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+a: [1,2,3];
+b: [4,5,-1];
+c: [6,3,8];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+g(a,b,c);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Problema 6 - Sección 1.2.9
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Primero se ingresan los vectores tal y como lo plantea el ejercicio:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+a: [1,2,3]; b:[4,5,6]; c:[3,2,1]; d:[6,5,4];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsubsect start ]
+Suma(resta) entre vectores:
+   [wxMaxima: subsubsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+a + b + c + d;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+a + b - c - d;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+a - b + c - d;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+- a + b - c + d;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsubsect start ]
+Ángulo entre los vectores a, b, c, d y los vectores base i1, i2, i3
+   [wxMaxima: subsubsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Definimos los vectores de la base, asumiendo que esta es una base ortonormal dextrógira como la canónica:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+i1:[1,0,0]; i2:[0,1,0]; i3:[0,0,1];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Entonces para el vector a:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/* El ángulo con el vector i1 de la base sería */
+θ_1a= acos((a.i1)/(sqrt(a.a)*sqrt(i1.i1)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_1a= acos((a.i1)/(sqrt(a.a)*sqrt(i1.i1))), float;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/* El ángulo con el vector i2 de la base sería */
+θ_2a= acos((a.i2)/(sqrt(a.a)*sqrt(i2.i2)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_2a= acos((a.i2)/(sqrt(a.a)*sqrt(i2.i2))), float;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/* El ángulo con el vector i3 de la base sería */
+θ_3a= acos((a.i3)/(sqrt(a.a)*sqrt(i3.i3)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_3a= acos((a.i3)/(sqrt(a.a)*sqrt(i3.i3))), float;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Análogamente para el vector b:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/* El ángulo con el vector i1 de la base sería */
+θ_1b= acos((b.i1)/(sqrt(b.b)*sqrt(i1.i1)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_1b= acos((b.i1)/(sqrt(b.b)*sqrt(i1.i1))), float;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/* El ángulo con el vector i2 de la base sería */
+θ_2b= acos((b.i2)/(sqrt(b.b)*sqrt(i2.i2)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_2b= acos((b.i2)/(sqrt(b.b)*sqrt(i2.i2))), float;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/* El ángulo con el vector i3 de la base sería */
+θ_3b= acos((b.i3)/(sqrt(b.b)*sqrt(i3.i3)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_3b= acos((b.i3)/(sqrt(b.b)*sqrt(i3.i3))), float;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Ahora para el vector c:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/* El ángulo con el vector i1 de la base sería */
+θ_1c= acos((c.i1)/(sqrt(c.c)*sqrt(i1.i1)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_1c= acos((c.i1)/(sqrt(c.c)*sqrt(i1.i1))), float;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/* El ángulo con el vector i2 de la base sería */
+θ_2c= acos((c.i2)/(sqrt(c.c)*sqrt(i2.i2)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_2c= acos((c.i2)/(sqrt(c.c)*sqrt(i2.i2))), float;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/* El ángulo con el vector i3 de la base sería */
+θ_3c= acos((c.i3)/(sqrt(c.c)*sqrt(i3.i3)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_3c= acos((c.i3)/(sqrt(c.c)*sqrt(i3.i3))), float;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Finalmente para el vector d:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/* El ángulo con el vector i1 de la base sería */
+θ_1d= acos((d.i1)/(sqrt(d.d)*sqrt(i1.i1)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_1d= acos((d.i1)/(sqrt(d.d)*sqrt(i1.i1))), float;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/* El ángulo con el vector i2 de la base sería */
+θ_2d= acos((d.i2)/(sqrt(d.d)*sqrt(i2.i2)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_2d= acos((d.i2)/(sqrt(d.d)*sqrt(i2.i2))), float;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/* El ángulo con el vector i3 de la base sería */
+θ_3d= acos((d.i3)/(sqrt(d.d)*sqrt(i3.i3)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_3d= acos((d.i3)/(sqrt(d.d)*sqrt(i3.i3))), float;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsubsect start ]
+Magnitud de los vectores a, b, c, d
+   [wxMaxima: subsubsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"|a|" = sqrt(a.a);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"|b|" =  sqrt(b.b);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"|c|" = sqrt(c.c);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"|d|" = sqrt(d.d);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsubsect start ]
+Ángulo entre a y b y entre c y d
+   [wxMaxima: subsubsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Ángulo entre a y b:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_ab= acos((a.b)/(sqrt(a.a)*sqrt(b.b)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_ab= acos((a.b)/(sqrt(a.a)*sqrt(b.b))), float;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Ángulo entre c y d
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_cd= acos((c.d)/(sqrt(c.c)*sqrt(d.d)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_cd= acos((c.d)/(sqrt(c.c)*sqrt(d.d))), float;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsubsect start ]
+Proyección de a sobre b
+   [wxMaxima: subsubsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+proy_a_b = ((a.b)/b.b).b;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsubsect start ]
+¿Son los vectores a, b, c, d coplanares?
+   [wxMaxima: subsubsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Para determinar si un conjunto de vectores son coplanares se debe revisar si son linealmente dependientes, así:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+αa + βb + γc + δd = 0, para α,βγδ
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+Y se plantea un sistema de ecuaciones para revisar si existen números diferentes a 0 que cumplan con las igualdades
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+α + 4β + 3γ + 6δ = 0
+2α + 5β + 2γ + 5δ = 0
+3α + 6β + γ +4δ = 0
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+sel : [alpha+4*beta+3*gamma + 6*delta=0,2*alpha+5*beta+2*gamma + 5*delta=0,3*alpha+6*beta+gamma+4*delta=0];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+linsolve(sel,[alpha,beta,gamma,delta]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Como tengo un sistema de ecuaciones homogéneo de 3 ecuaciones y 4 incógnitas, la única posibilidad es que el sistema tenga infinitas soluciones y, por ende,
+se muestra que los vectores a, b, c y d son coplanares al ser linealmente dependientes.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: subsubsect start ]
+Encuentre (a+b).(c+d)
+   [wxMaxima: subsubsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"(a+b).(c+d)" = (a+b).(c+d);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsubsect start ]
+Los productos a × b, b × c, c × d y los ángulos que estos forman con d
+   [wxMaxima: subsubsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+En primer lugar se carga la librería vect para utilizar el producto vectorial
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+load(vect)$
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+(a × b) y su ángulo con d:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+u : express(a~b);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_u = acos((u.d)/(sqrt(u.u)*sqrt(d.d)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+(b × c) y su ángulo con d:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+v: express(b~c);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_v = acos((v.d)/(sqrt(v.v)*sqrt(d.d)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+(c × d) y su ángulo con d:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+w: express(c~d);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+θ_w = acos((w.d)/(sqrt(w.w)*sqrt(d.d)));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: subsubsect start ]
+c·(a × b)
+   [wxMaxima: subsubsect end   ] */
+
+
+/* [wxMaxima: input   start ] */
+"c·(a × b)" = c.express(a~b);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Con esto se comprueba que, al menos a, b y c son vectores coplanares pues su triple producto mixto da 0. 
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: section start ]
+Análisis vectorial express
+   [wxMaxima: section end   ] */
+
+
+/* [wxMaxima: subsect start ]
+Sección 1.5.7
+   [wxMaxima: subsect end   ] */
+
+
+/* [wxMaxima: subsubsect start ]
+Problema 13
+   [wxMaxima: subsubsect end   ] */
+
+
+/* [wxMaxima: comment start ]
+Sabemos que nuestro contorno es x^2+y^2=1, lo parametrizamos con x=cos(t) e y=sen(t) y lo graficamos con la función wxplot2d
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+wxplot2d([parametric,cos(t),sin(t),
+[t,-%pi,%pi]],[nticks,50],[gnuplot_preamble,"set size ratio 1"]);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Ahora debemos definir la función vectorial del campo de fuerza:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+F(x,y):= [-y/(x^2+y^2),x/(x^2+y^2)];
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Posteriormente definimos x e y como parametro y sus derivadas
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+x:cos(t);
+y:sin(t);
+dx:diff(x,t,1);
+dy:diff(y,t,1);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Y ahora definimos la integral de linea, con signo negativo debido a que se calcula el trabajo hecho en contra del campo.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+a:-integrate(F(x,y)*[dx,dy], t, 0, -%pi);
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+El resultado que arroja la integral es dos componentes que son el resultado de la integral para la componente x e y respectivamente. De esta forma se sumaran con el operador "Result(a)" definido posteriormente.
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+Result(a):=a[1]+a[2];
+Result(a);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Lo anterior fue para el trabajo desde 0 a -%\pi, para calcular de 0 a %pi se hace de forma análoga:
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+b:-integrate(F(x,y)*[diff(x,t,1),diff(y,t,1)], t, 0, %pi);
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+Result(b);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 21.05.2"$
